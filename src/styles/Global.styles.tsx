@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Theme } from "./theme.styles";
 
 const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
@@ -10,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     min-height: 100vh;
     font-family: 'Nunito Sans', sans-serif;
+    background-color: ${({ theme }: { theme: Theme }) => theme.background}
   }
 `;
 
