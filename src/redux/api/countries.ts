@@ -1,11 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 interface Country {
-  name: "Afghanistan";
-  capital: "Kabul";
-  region: "Asia";
-  population: 40218234;
-  independent: false;
+  name: string;
+  capital: string;
+  region: string;
+  population: number;
+  flag: string;
+  independent: boolean;
 }
 
 export const countriesApi = createApi({
