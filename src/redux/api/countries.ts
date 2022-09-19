@@ -6,7 +6,16 @@ interface Country {
   region: string;
   population: number;
   flag: string;
-  independent: boolean;
+  alpha3Code: string;
+}
+
+interface CountryDetails extends Country {
+  nativeName: string;
+  subregion: string;
+  topLevelDomain: string[];
+  currencies: { code: string; name: string; symbol: string }[];
+  languages: string[];
+  borders: string[];
 }
 
 export const countriesApi = createApi({
@@ -14,9 +23,42 @@ export const countriesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://restcountries.com" }),
   endpoints: (builder) => ({
     getAllCountries: builder.query<Country[], void>({
-      query: () => "/v2/all?fields=name,population,region,capital,flag",
+      query: () => ({
+        url: "/v2/all",
+        params: {
+          fields: [
+            "name",
+            "population",
+            "region",
+            "capital",
+            "flag",
+            "alpha3Code",
+          ],
+        },
+      }),
+    }),
+    getCountryDetails: builder.query<CountryDetails, string>({
+      query: (name) => ({
+        url: `/v2/alpha/${name}`,
+        params: {
+          fields: [
+            "name",
+            "population",
+            "region",
+            "capital",
+            "flag",
+            "topLevelDomain",
+            "nativeName",
+            "currencies",
+            "subregion",
+            "borders",
+            "languages",
+          ],
+        },
+      }),
     }),
   }),
 });
 
-export const { useGetAllCountriesQuery } = countriesApi;
+export const { useGetAllCountriesQuery, useGetCountryDetailsQuery } =
+  countriesApi;

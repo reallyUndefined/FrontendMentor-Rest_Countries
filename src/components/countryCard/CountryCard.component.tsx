@@ -1,4 +1,5 @@
 import { SCountryCard } from "./CountryCard.styles";
+import { Link } from "react-router-dom";
 
 interface CountryCardProps {
   img: string;
@@ -6,6 +7,7 @@ interface CountryCardProps {
   region: string;
   population: number;
   capital: string;
+  code: string;
 }
 function CountryCard({
   img,
@@ -13,12 +15,17 @@ function CountryCard({
   region,
   population,
   capital,
+  code,
 }: CountryCardProps) {
   return (
     <SCountryCard>
-      <img src={img} alt="flag" />
+      <Link to={`/country/${code}`}>
+        <img src={img} alt="flag" />
+      </Link>
       <div className="content">
-        <h2>{name}</h2>
+        <h2>
+          <Link to={`/country/${code}`}>{name}</Link>
+        </h2>
         <p>
           <span className="name">Population:&nbsp;</span>
           <span className="value">

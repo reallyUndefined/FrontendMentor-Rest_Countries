@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import { isDarkMode } from "./redux/theme";
 import GlobalStyles from "./styles/Global.styles";
 import { darkTheme, lightTheme } from "./styles/theme.styles";
+import Country from "./pages/Country.page";
 
 function App() {
   const darkMode = useSelector(isDarkMode);
@@ -19,6 +20,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/country/:code" element={<Country />} />
       </Routes>
     </ThemeProvider>
   );

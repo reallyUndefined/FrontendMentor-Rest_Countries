@@ -10,7 +10,7 @@ export const SCountryCard = styled.article`
   width: 100%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-  & > img {
+  & img {
     width: 100%;
     height: 10rem;
     object-fit: cover;
@@ -23,6 +23,10 @@ export const SCountryCard = styled.article`
       font-size: 1.125rem;
       font-weight: 800;
       margin-bottom: 1rem;
+
+      a {
+        color: inherit;
+      }
     }
 
     & > p {

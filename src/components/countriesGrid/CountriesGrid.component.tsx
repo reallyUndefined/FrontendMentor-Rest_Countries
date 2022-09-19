@@ -19,6 +19,7 @@ function CountriesGrid() {
             name={country.name}
             population={country.population}
             region={country.region}
+            code={country.alpha3Code}
           />
         ))}
       </SCountriesGrid>
