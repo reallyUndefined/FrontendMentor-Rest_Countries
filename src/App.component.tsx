@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
+import CountriesGrid from "./components/countriesGrid/CountriesGrid.component";
 import Header from "./components/header/Header.component";
 import { isDarkMode } from "./redux/theme";
 import GlobalStyles from "./styles/Global.styles";
@@ -12,6 +13,7 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Header />
+      <CountriesGrid />
     </ThemeProvider>
   );
 }
