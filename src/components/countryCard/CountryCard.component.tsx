@@ -21,7 +21,9 @@ function CountryCard({
         <h2>{name}</h2>
         <p>
           <span className="name">Population:&nbsp;</span>
-          <span className="value">{population}</span>
+          <span className="value">
+            {new Intl.NumberFormat("en-us").format(population)}
+          </span>
         </p>
         <p>
           <span className="name">Region:&nbsp;</span>
