@@ -6,7 +6,7 @@ import Home from "./pages/Home.page";
 
 import { Routes, Route } from "react-router-dom";
 
-import { isDarkMode } from "./redux/theme";
+import { isDarkMode } from "./redux/theme.slice";
 import GlobalStyles from "./styles/Global.styles";
 import { darkTheme, lightTheme } from "./styles/theme.styles";
 import Country from "./pages/Country.page";

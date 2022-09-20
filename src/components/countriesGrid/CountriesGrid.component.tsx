@@ -1,4 +1,4 @@
-import { useGetAllCountriesQuery } from "../../redux/api/countries";
+import { useGetAllCountriesQuery } from "../../redux/api/countries.api";
 import Container from "../container/Container.component";
 import CountryCard from "../countryCard/CountryCard.component";
 import Loading from "../loading/Loading.component";

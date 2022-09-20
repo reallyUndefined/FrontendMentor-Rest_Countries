@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useGetCountryNamesQuery } from "../../redux/api/countries";
+import { useGetCountryNamesQuery } from "../../redux/api/countries.api";
 import Loading from "../loading/Loading.component";
 import { SBorderCountries } from "./BorderCountries.styles";
 

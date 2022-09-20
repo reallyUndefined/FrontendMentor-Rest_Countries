@@ -1,7 +1,7 @@
 import { SHeader, SHeaderBg } from "./Header.styles";
 import { HiMoon, HiOutlineMoon } from "react-icons/hi";
 import { useDispatch } from "react-redux";
-import { isDarkMode, toggleTheme } from "../../redux/theme";
+import { isDarkMode, toggleTheme } from "../../redux/theme.slice";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Container from "../container/Container.component";

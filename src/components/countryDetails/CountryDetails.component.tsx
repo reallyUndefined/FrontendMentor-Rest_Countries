@@ -1,7 +1,7 @@
 import { SCountryDetails } from "./CountryDetails.styles";
 import { useNavigate, useParams } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
-import { useGetCountryDetailsQuery } from "../../redux/api/countries";
+import { useGetCountryDetailsQuery } from "../../redux/api/countries.api";
 import Loading from "../loading/Loading.component";
 import DItem from "../dItem/DItem.component";
 import BorderCountries from "../borderCountries/BorderCountries.component";

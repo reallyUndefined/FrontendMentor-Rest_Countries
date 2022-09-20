@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import { countriesApi } from "./api/countries";
+import { countriesApi } from "./api/countries.api";
 
-import themeReducer from "./theme";
+import themeReducer from "./theme.slice";
 
 const store = configureStore({
   reducer: {
