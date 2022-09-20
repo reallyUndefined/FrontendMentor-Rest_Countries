@@ -1,5 +1,6 @@
 import { SCountryCard } from "./CountryCard.styles";
 import { Link } from "react-router-dom";
+import DItem from "../dItem/DItem.component";
 
 interface CountryCardProps {
   img: string;
@@ -26,20 +27,12 @@ function CountryCard({
         <h2>
           <Link to={`/country/${code}`}>{name}</Link>
         </h2>
-        <p>
-          <span className="name">Population:&nbsp;</span>
-          <span className="value">
-            {new Intl.NumberFormat("en-us").format(population)}
-          </span>
-        </p>
-        <p>
-          <span className="name">Region:&nbsp;</span>
-          <span className="value">{region}</span>
-        </p>
-        <p>
-          <span className="name">Capital:&nbsp;</span>
-          <span className="value">{capital}</span>
-        </p>
+        <DItem
+          name={"Population"}
+          value={new Intl.NumberFormat("en-us").format(population)}
+        />
+        <DItem name={"Region"} value={region} />
+        <DItem name={"Capital"} value={capital} />
       </div>
     </SCountryCard>
   );

@@ -5,6 +5,7 @@ import { useGetCountryDetailsQuery } from "../../redux/api/countries";
 import Loading from "../loading/Loading.component";
 import DItem from "../dItem/DItem.component";
 import BorderCountries from "../borderCountries/BorderCountries.component";
+import Container from "../container/Container.component";
 
 function CountryDetails() {
   const navigate = useNavigate();
@@ -67,12 +68,14 @@ function CountryDetails() {
   else if (isError) content = <p>Some error occurred. Try again.</p>;
 
   return (
-    <SCountryDetails>
-      <button className="back-btn" onClick={() => navigate(-1)}>
-        <BsArrowLeft /> Back
-      </button>
-      {content}
-    </SCountryDetails>
+    <Container>
+      <SCountryDetails>
+        <button className="back-btn" onClick={() => navigate(-1)}>
+          <BsArrowLeft /> Back
+        </button>
+        {content}
+      </SCountryDetails>
+    </Container>
   );
 }
 

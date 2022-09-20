@@ -10,6 +10,10 @@ const GlobalStyles = createGlobalStyle`
     color: ${({ theme }: { theme: Theme }) => theme.text};
   }
 
+  button {
+    cursor: pointer;
+  }
+
   body {
     min-height: 100vh;
     font-family: 'Nunito Sans', sans-serif;

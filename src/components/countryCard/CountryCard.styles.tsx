@@ -7,12 +7,13 @@ export const SCountryCard = styled.article`
   overflow: hidden;
   max-width: 16.5rem;
   width: 100%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   & img {
     width: 100%;
     height: 10rem;
     object-fit: cover;
+    display: block;
   }
 
   & > .content {
@@ -29,15 +30,7 @@ export const SCountryCard = styled.article`
     }
 
     & > p {
-      font-size: 0.875rem;
-    }
-
-    & > p .name {
-      font-weight: 600;
-    }
-
-    & > p .value {
-      font-weight: 300;
+      margin-bottom: 0.25rem;
     }
 
     & > p:last-child {

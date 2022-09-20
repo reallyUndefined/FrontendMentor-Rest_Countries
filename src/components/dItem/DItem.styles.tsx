@@ -10,4 +10,8 @@ export const SDItem = styled.p`
   .value {
     font-weight: 300;
   }
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 `;
