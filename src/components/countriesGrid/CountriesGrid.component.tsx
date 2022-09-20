@@ -1,10 +1,14 @@
+import { useSelector } from "react-redux";
 import { useGetAllCountriesQuery } from "../../redux/api/countries.api";
+import { getSearchTerm } from "../../redux/filter.slice";
 import Container from "../container/Container.component";
 import CountryCard from "../countryCard/CountryCard.component";
 import Loading from "../loading/Loading.component";
 import { SCountriesGrid } from "./CountriesGrid.styles";
 
 function CountriesGrid() {
+  const searchTerm = useSelector(getSearchTerm);
+
   const { isLoading, isSuccess, isError, data } = useGetAllCountriesQuery();
 
   let content;
@@ -13,17 +17,19 @@ function CountriesGrid() {
     content = (
       <Container>
         <SCountriesGrid>
-          {data.map((country) => (
-            <CountryCard
-              key={country.name}
-              img={country.flag}
-              capital={country.capital}
-              name={country.name}
-              population={country.population}
-              region={country.region}
-              code={country.alpha3Code}
-            />
-          ))}
+          {data
+            .filter((c) => c.name.toLowerCase().match(searchTerm.trim()))
+            .map((country) => (
+              <CountryCard
+                key={country.name}
+                img={country.flag}
+                capital={country.capital}
+                name={country.name}
+                population={country.population}
+                region={country.region}
+                code={country.alpha3Code}
+              />
+            ))}
         </SCountriesGrid>
       </Container>
     );

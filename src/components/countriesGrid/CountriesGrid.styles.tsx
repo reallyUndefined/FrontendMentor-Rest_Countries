@@ -10,5 +10,6 @@ export const SCountriesGrid = styled.main`
 
   @media (min-width: 768px) {
     gap: 4rem;
+    place-content: start;
   }
 `;
