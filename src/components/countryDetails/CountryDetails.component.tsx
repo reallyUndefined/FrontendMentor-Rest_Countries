@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import { useGetCountryDetailsQuery } from "../../redux/api/countries";
 import Loading from "../loading/Loading.component";
+import DItem from "../dItem/DItem.component";
 
 function CountryDetails() {
   const navigate = useNavigate();
@@ -28,48 +29,30 @@ function CountryDetails() {
             <h2>{country.name}</h2>
             <div className="details-grid">
               <div className="details">
-                <p>
-                  <span className="name">Native Name:&nbsp;</span>
-                  <span className="value">{country.nativeName}</span>
-                </p>
-                <p>
-                  <span className="name">Population:&nbsp;</span>
-                  <span className="value">
-                    {new Intl.NumberFormat("en-us").format(country.population)}
-                  </span>
-                </p>
-                <p>
-                  <span className="name">Region:&nbsp;</span>
-                  <span className="value">{country.region}</span>
-                </p>
-                <p>
-                  <span className="name">Sub Region:&nbsp;</span>
-                  <span className="value">{country.subregion}</span>
-                </p>
-                <p>
-                  <span className="name">Capital:&nbsp;</span>
-                  <span className="value">{country.capital}</span>
-                </p>
+                <DItem name={"Native Name"} value={country.nativeName} />
+                <DItem
+                  name={"Population"}
+                  value={new Intl.NumberFormat("en-us")
+                    .format(country.population)
+                    .toString()}
+                />
+                <DItem name={"Region"} value={country.region} />
+                <DItem name={"Sub Region"} value={country.subregion} />
+                <DItem name={"Capital"} value={country.capital} />
               </div>
               <div className="details">
-                <p>
-                  <span className="name">Top Level Domain:&nbsp;</span>
-                  <span className="value">
-                    {country.topLevelDomain.join(", ")}
-                  </span>
-                </p>
-                <p>
-                  <span className="name">Currencies:&nbsp;</span>
-                  <span className="value">
-                    {country.currencies.map((curr) => curr.code).join(", ")}
-                  </span>
-                </p>
-                <p>
-                  <span className="name">Languages:&nbsp;</span>
-                  <span className="value">
-                    {country.languages.map((lang) => lang.name).join(", ")}
-                  </span>
-                </p>
+                <DItem
+                  name={"Top Level Domain"}
+                  value={country.topLevelDomain.join(", ")}
+                />
+                <DItem
+                  name={"Currencies"}
+                  value={country.currencies.map((curr) => curr.code).join(", ")}
+                />
+                <DItem
+                  name={"Languages"}
+                  value={country.languages.map((lang) => lang.name).join(", ")}
+                />
               </div>
             </div>
             {country.borders.length > 0 && (
