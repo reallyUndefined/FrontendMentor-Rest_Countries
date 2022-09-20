@@ -51,12 +51,6 @@ export const SCountryDetails = styled.main`
         & > h3 {
           margin-bottom: 1rem;
         }
-
-        .border-countries {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0.625rem;
-        }
       }
     }
   }

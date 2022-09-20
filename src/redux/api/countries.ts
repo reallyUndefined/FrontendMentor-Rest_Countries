@@ -57,8 +57,20 @@ export const countriesApi = createApi({
         },
       }),
     }),
+    getCountryNames: builder.query<{ name: string }[], string[]>({
+      query: (codes) => ({
+        url: `/v2/alpha`,
+        params: {
+          codes,
+          fields: ["name"],
+        },
+      }),
+    }),
   }),
 });
 
-export const { useGetAllCountriesQuery, useGetCountryDetailsQuery } =
-  countriesApi;
+export const {
+  useGetAllCountriesQuery,
+  useGetCountryDetailsQuery,
+  useGetCountryNamesQuery,
+} = countriesApi;

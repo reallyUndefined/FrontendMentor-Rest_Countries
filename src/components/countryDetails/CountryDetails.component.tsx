@@ -4,6 +4,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import { useGetCountryDetailsQuery } from "../../redux/api/countries";
 import Loading from "../loading/Loading.component";
 import DItem from "../dItem/DItem.component";
+import BorderCountries from "../borderCountries/BorderCountries.component";
 
 function CountryDetails() {
   const navigate = useNavigate();
@@ -15,8 +16,6 @@ function CountryDetails() {
     isSuccess,
     data: country,
   } = useGetCountryDetailsQuery(code || "");
-
-  console.log(country);
 
   let content;
   if (isLoading) content = <Loading />;
@@ -58,13 +57,7 @@ function CountryDetails() {
             {country.borders.length > 0 && (
               <div className="borders">
                 <h3>Border Countries:</h3>
-                <div className="border-countries">
-                  {country.borders.map((bc) => (
-                    <button onClick={() => navigate(`/country/${bc}`)}>
-                      {bc}
-                    </button>
-                  ))}
-                </div>
+                <BorderCountries codes={country.borders} />
               </div>
             )}
           </div>
