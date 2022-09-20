@@ -3,7 +3,6 @@ import { Theme } from "../../styles/theme.styles";
 
 export const SHeader = styled.header`
   background-color: ${({ theme }: { theme: Theme }) => theme.elements};
-  color: ${({ theme }: { theme: Theme }) => theme.text};
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 16px;
   padding-inline: 1rem;
   padding-block: 1.875rem;

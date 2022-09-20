@@ -3,7 +3,6 @@ import { Theme } from "../../styles/theme.styles";
 
 export const SCountryCard = styled.article`
   background-color: ${({ theme }: { theme: Theme }) => theme.elements};
-  color: ${({ theme }: { theme: Theme }) => theme.text};
   border-radius: 0.25rem;
   overflow: hidden;
   max-width: 16.5rem;

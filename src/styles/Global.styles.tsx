@@ -7,12 +7,13 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    color: ${({ theme }: { theme: Theme }) => theme.text};
   }
 
   body {
     min-height: 100vh;
     font-family: 'Nunito Sans', sans-serif;
-    background-color: ${({ theme }: { theme: Theme }) => theme.background}
+    background-color: ${({ theme }: { theme: Theme }) => theme.background};
   }
 `;
 
