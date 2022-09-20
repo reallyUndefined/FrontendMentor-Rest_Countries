@@ -7,7 +7,7 @@ export const SLoading = styled.div`
   overflow: hidden;
   place-self: center;
   margin-inline: auto;
-  margin-top: 10rem;
+  margin-top: 2rem;
 
   & > img {
     display: block;

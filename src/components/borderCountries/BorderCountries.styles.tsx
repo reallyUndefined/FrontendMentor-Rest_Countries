@@ -9,5 +9,6 @@ export const SBorderCountries = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 0.75rem;
   }
 `;
