@@ -14,7 +14,7 @@ interface CountryDetails extends Country {
   subregion: string;
   topLevelDomain: string[];
   currencies: { code: string; name: string; symbol: string }[];
-  languages: string[];
+  languages: { name: string }[];
   borders: string[];
 }
 
