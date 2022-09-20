@@ -63,6 +63,11 @@ export const SFilters = styled.div<SFiltersProps>`
       font-size: 0.875rem;
     }
 
+    & > button {
+      background-color: inherit;
+      border: none;
+    }
+
     .dropdown-menu {
       display: ${(props) => (props.showDropdown ? "grid" : "none")};
       position: absolute;

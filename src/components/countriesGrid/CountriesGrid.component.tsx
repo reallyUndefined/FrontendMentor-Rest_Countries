@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useGetAllCountriesQuery } from "../../redux/api/countries.api";
-import { getSearchTerm } from "../../redux/filter.slice";
+import { getFilterRegion, getSearchTerm } from "../../redux/filter.slice";
 import Container from "../container/Container.component";
 import CountryCard from "../countryCard/CountryCard.component";
 import Loading from "../loading/Loading.component";
@@ -8,6 +8,7 @@ import { SCountriesGrid } from "./CountriesGrid.styles";
 
 function CountriesGrid() {
   const searchTerm = useSelector(getSearchTerm);
+  const filterRegion = useSelector(getFilterRegion);
 
   const { isLoading, isSuccess, isError, data } = useGetAllCountriesQuery();
 
@@ -19,6 +20,9 @@ function CountriesGrid() {
         <SCountriesGrid>
           {data
             .filter((c) => c.name.toLowerCase().match(searchTerm.trim()))
+            .filter((c) =>
+              c.region.toLowerCase().match(filterRegion.toLowerCase())
+            )
             .map((country) => (
               <CountryCard
                 key={country.name}
