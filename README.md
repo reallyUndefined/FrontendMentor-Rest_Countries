@@ -1,4 +1,44 @@
-# Getting Started with Create React App
+# Frontend Mentor - REST Countries with theme switcher
+
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Frontend Mentor - REST Countries with theme switcher](#frontend-mentor---rest-countries-with-theme-switcher)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+  - [Available Scripts](#available-scripts)
+    - [`yarn start`](#yarn-start)
+    - [`yarn test`](#yarn-test)
+    - [`yarn build`](#yarn-build)
+    - [`yarn eject`](#yarn-eject)
+  - [Learn More](#learn-more)
+
+## Overview
+
+### Screenshot
+
+![screenshot](./screenshots/screenshot-1.png)
+
+### Links
+
+- Solution URL: [Click here](https://www.frontendmentor.io/solutions/rest-countries-with-theme-switcher-Ah3f0sNXlE)
+- Live Site URL: [Click here](https://undefined-fm-rest-countries.netlify.app/)
+
+## My process
+
+### Built with
+
+- React
+- Typescript
+- React Router v6
+- Redux
+- RTK Query
+- Styled Components
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
