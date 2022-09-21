@@ -23,7 +23,7 @@ function Filters() {
 
   return (
     <Container>
-      <SFilters showDropdown={showDropdown}>
+      <SFilters aria-label="filters" showDropdown={showDropdown}>
         <div className="search">
           <FaSearch />
           <input
@@ -38,6 +38,7 @@ function Filters() {
         >
           <span>{region ? region : "Filter by Region"}</span>
           <button
+            aria-label={region ? "close" : "open"}
             onClick={(evt) => {
               evt.stopPropagation();
               if (region) dispatch(filterRegion(""));

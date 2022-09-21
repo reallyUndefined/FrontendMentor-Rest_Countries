@@ -4,13 +4,18 @@ import { Theme } from "../../styles/theme.styles";
 interface SFiltersProps {
   showDropdown: boolean;
 }
-export const SFilters = styled.div<SFiltersProps>`
+export const SFilters = styled.section<SFiltersProps>`
   padding-block: 1.5rem;
   padding-inline: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 2.5rem;
+
+  @media (min-width: 768px) {
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
 
   .search {
     max-width: 30rem;
