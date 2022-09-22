@@ -6,6 +6,7 @@ import Loading from "../loading/Loading.component";
 import DItem from "../dItem/DItem.component";
 import BorderCountries from "../borderCountries/BorderCountries.component";
 import Container from "../container/Container.component";
+import { useEffect } from "react";
 
 function CountryDetails() {
   const navigate = useNavigate();
@@ -17,6 +18,11 @@ function CountryDetails() {
     isSuccess,
     data: country,
   } = useGetCountryDetailsQuery(code || "");
+
+  useEffect(() => {
+    if (!isLoading) document.title = country!.name;
+    window.scrollTo(0, 0);
+  }, [isLoading, country]);
 
   let content;
   if (isLoading) content = <Loading />;
