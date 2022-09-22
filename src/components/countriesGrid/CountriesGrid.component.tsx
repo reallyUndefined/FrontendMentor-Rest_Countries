@@ -19,7 +19,9 @@ function CountriesGrid() {
       <Container>
         <SCountriesGrid>
           {data
-            .filter((c) => c.name.toLowerCase().match(searchTerm.trim()))
+            .filter((c) =>
+              c.name.toLowerCase().match(searchTerm.trim().toLowerCase())
+            )
             .filter((c) =>
               c.region.toLowerCase().match(filterRegion.toLowerCase())
             )
