@@ -1,12 +1,15 @@
+import { useEffect, lazy, Suspense } from "react";
 import { SCountryDetails } from "./CountryDetails.styles";
 import { useNavigate, useParams } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import { useGetCountryDetailsQuery } from "../../redux/api/countries.api";
 import Loading from "../loading/Loading.component";
 import DItem from "../dItem/DItem.component";
-import BorderCountries from "../borderCountries/BorderCountries.component";
 import Container from "../container/Container.component";
-import { useEffect } from "react";
+
+const BorderCountries = lazy(
+  () => import("../borderCountries/BorderCountries.component")
+);
 
 function CountryDetails() {
   const navigate = useNavigate();
@@ -64,7 +67,9 @@ function CountryDetails() {
             {country.borders.length > 0 && (
               <div className="borders">
                 <h3>Border Countries:</h3>
-                <BorderCountries codes={country.borders} />
+                <Suspense>
+                  <BorderCountries codes={country.borders} />
+                </Suspense>
               </div>
             )}
           </div>

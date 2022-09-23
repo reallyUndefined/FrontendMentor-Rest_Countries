@@ -1,9 +1,14 @@
-import CountryDetails from "../components/countryDetails/CountryDetails.component";
+import { Suspense, lazy } from "react";
+const CountryDetails = lazy(
+  () => import("../components/countryDetails/CountryDetails.component")
+);
 
 function Country() {
   return (
     <>
-      <CountryDetails />
+      <Suspense>
+        <CountryDetails />
+      </Suspense>
     </>
   );
 }
