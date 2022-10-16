@@ -42,6 +42,7 @@ function Filters() {
             onClick={(evt) => {
               evt.stopPropagation();
               if (region) dispatch(filterRegion(""));
+              else setShowDropdown((prev) => !prev);
             }}
           >
             {region ? <AiOutlineClose /> : <FaChevronDown />}
